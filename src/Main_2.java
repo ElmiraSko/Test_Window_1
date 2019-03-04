@@ -11,7 +11,6 @@ import javax.swing.*;
 
                 }
             });
-           System.out.println("Поток завершен  " + Thread.currentThread().getName());
         }
     }
 
