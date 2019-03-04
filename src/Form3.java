@@ -127,9 +127,15 @@ public int getPane() {
     panel.add(label);
     panel.add(pass);
     String[] options = new String[]{"OK", "Отмена"};
-    return JOptionPane.showOptionDialog(null, panel, "Инициализация",
-            JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
-            null, options, options[1]);
+    return JOptionPane.showOptionDialog(
+            null,
+            panel, //
+            "Инициализация",  //
+            JOptionPane.NO_OPTION, //
+            JOptionPane.PLAIN_MESSAGE, //
+            null, //
+            options, //optionType - Определяет набор кнопок опций, которые появляются в нижней части диалогового окна:
+            options[0]); //По умолчанию 'выделенная' кнопка
 }
 
     //====== Метод getPassword() возвращает нам введенное пользователем слово преобразованное в тип String
@@ -158,13 +164,17 @@ public int getPane() {
                         if (pass2.equals(getPassword())) {    // Если есть совпадение, то
                             new Form2();                     // открываем новое окно Form2()
                             dispose();                       // Закрываем текущее окно и освобождаем ресурсы
-                            i--;    //Уменьшаем i на единицу, чтобы прирвать цикл for(int i = 1;....).
+                            i--;    //Уменьшаем i на единицу, чтобы прервать цикл for(int i = 1;....).
                         }
                             else {    //Если не было совпадения паролей, показываем уведомление для совершения очередной попытки
                             JOptionPane.showMessageDialog(null, "Неверный пароль. Попробуйте снова.");
                             continue;   //Переходим снова к for(int i = 1;....) и начинаем проверку сначало
                         }
                     }
+                    else {
+                        i--;
+                        return;
+                     }
                 }
             }
 
