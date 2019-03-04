@@ -35,16 +35,15 @@ public class Form2 extends JFrame {
         textList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         textList.setSelectedIndex(0);
         textList.addMouseListener(new MouseAdapter() {
-
                                       public void mouseClicked(MouseEvent e) {
                                           if (e.getClickCount() == 2) {//двойной шелчок по элементу списка
-new FormEdit(str3);
-dispose();
+                                            new FormEdit(str3);
+                                            dispose();
                                           }
                                       }
                                   });
 
-                    sp = new JScrollPane(textList);
+        sp = new JScrollPane(textList);
         JButton b1 = new JButton("Delete");
         JButton b2 = new JButton("Add");
         JButton b3 = new JButton("Testing");
